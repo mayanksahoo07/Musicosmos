@@ -123,7 +123,7 @@ function App() {
 
         if (ethereum) {
             window.web3 = new Web3(ethereum);
-            await addEvmmosTestnetNetwork();
+            await addEvmosTestnetNetwork();
         } else if (ethereum && (await ethereum.request({ method: "net_version" })) !== "9000") {
             window.web3 = new Web3(window.web3.currentProvider);
             await addEvmosTestnetNetwork();
