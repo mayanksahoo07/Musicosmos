@@ -1,9 +1,9 @@
-# Musomatic
+# Musicosmos
 
 <img src="./musomatic_home.png" alt="Musicosmos Home"/>
 
 <br/>
-Musomatic is a decentralized platform where musicians can put up music/songs as NFTs. These NFTs can then be traded and each time an NFT gets traded, the musician will receive a certain percent of the trade as royalty! The main essence of the platform is to uplift music creators as they really do not get enough recognition and monetary benefits or royalties from the current available sources.
+Musicosmos is a decentralized platform where musicians can put up music/songs as NFTs. These NFTs can then be traded and each time an NFT gets traded, the musician will receive a certain percent of the trade as royalty! The main essence of the platform is to uplift music creators as they really do not get enough recognition and monetary benefits or royalties from the current available sources.
 
 Website link- <a href="https://pushpit07.github.io/Musomatic/">Musicosmos</a>
 
@@ -35,7 +35,7 @@ Website link- <a href="https://pushpit07.github.io/Musomatic/">Musicosmos</a>
 
 -   Clone the forked repo to your local system using `git clone https://github.com/<your-username>/Musicosmos`
 
--   Connect your local repo to the upstream using `git remote add upstream https://github.com/Pushpit07/Musomatic`
+-   Connect your local repo to the upstream `
 
 -   Run `npm install` to install npm dependencies
 
@@ -67,7 +67,7 @@ Just run: `truffle test`
 
 -   Run: `truffle console`
 
--   `Musomatic.deployed().then(function(instance) {contract = instance})`
+-   `Musicosmos.deployed().then(function(instance) {contract = instance})`
 
 -   Test the deployed contract:
 
@@ -80,6 +80,3 @@ Just run: `truffle test`
 -   To check the created song:
     `contract.songs(0)`
 
-## Migrating to Polygon Testnet
-
--   `truffle migrate --network polygonTestnet`
