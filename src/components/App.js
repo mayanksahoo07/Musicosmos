@@ -87,7 +87,7 @@ function App() {
         setEvmosINR(data.data.amount);
     }
 
-    const loadBlockchainData = useCallback(async () => {
+    async loadBlockchainData () {
         var accounts;
 
         async function addEvmosTestnetNetwork() {
@@ -146,8 +146,9 @@ function App() {
 
         // Load account
         setAccount(accounts[0]);
-
-        const networkData = Musicosmos.networks[ENV.BLOCKCHAIN];
+        
+        const networkId = await web3.eth.net.getId();
+        const networkData = Musicosmos.networks[networkId];
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
             setMusicosmos(_musicosmos);
