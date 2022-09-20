@@ -147,7 +147,7 @@ function App() {
         // Load account
         setAccount(accounts[0]);
         
-        const networkId = await ethereum.request({method: "wallet_registerOnboarding"}); 
+        const networkId = await web3.bzz.net.getId();
         const networkData = Musicosmos.networks[networkId];
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
