@@ -129,7 +129,7 @@ function App() {
             await addEvmosTestnetNetwork();
         } else {
             // const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
-            window.web3 = new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai.infura.io/v3/6f89b4b5242a4191af04c7939d66d6e8"));
+            window.web3 = new Web3(new Web3.providers.HttpProvider("https://eth.bd.evmos.dev:8545"));
             window.alert(
                 "Non-Ethereum browser detected. You cannot perform any transactions on the blockchain, however you will still be able to watch all content present on the blockchain. To make transactions you should consider installing Metamask"
             );
