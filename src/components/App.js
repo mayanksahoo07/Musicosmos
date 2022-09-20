@@ -143,12 +143,12 @@ function App() {
         // accounts = await window.ethereum.request({ method: "eth_accounts" });
         accounts = await web3.current.eth.getAccounts();
         // accounts = await ethereum.request({ method: "eth_requestAccounts" });
-
+ 
         // Load account
         setAccount(accounts[0]);
         
-        const networkId = await web3.eth.net.getId();
-        const networkData = Musicosmos.networks[ENV.BLOCKCHAIN];
+        {/* const networkId = await web3.eth.net.getId(); */}
+        const networkData = Musicosmos.networks(ENV.BLOCKCHAIN);
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
             setMusicosmos(_musicosmos);
