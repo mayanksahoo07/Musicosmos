@@ -71,16 +71,18 @@ function App() {
         });
     }
 
+    // Using ATOM conversion rates as EVMOS not provided
+    
     async function fetchEvmosUSD() {
         const COINBASE_BASE_URL = "https://api.coinbase.com/v2";
-        const res = await fetch(`${COINBASE_BASE_URL}/prices/MATIC-USD/buy`);
+        const res = await fetch(`${COINBASE_BASE_URL}/prices/ATOM-USD/buy`);
         const data = await res.json();
         setEvmosUSD(data.data.amount);
     }
 
     async function fetchEvmosINR() {
         const COINBASE_BASE_URL = "https://api.coinbase.com/v2";
-        const res = await fetch(`${COINBASE_BASE_URL}/prices/MATIC-INR/buy`);
+        const res = await fetch(`${COINBASE_BASE_URL}/prices/ATOM-INR/buy`) ;
         const data = await res.json();
         setEvmosINR(data.data.amount);
     }
@@ -145,7 +147,7 @@ function App() {
         // Load account
         setAccount(accounts[0]);
 
-        const networkData = Musicosmos.network[ENV.BLOCKCHAIN_NETWORK_ID];
+        const networkData = Musicosmos.networks[ENV.BLOCKCHAIN_NETWORK_ID];
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
             setMusicosmos(_musicosmos);
