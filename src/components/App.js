@@ -147,23 +147,7 @@ function App() {
         // Load account
         setAccount(accounts[0]);
         
-        const networkId = await ethereum.request({
-                            method: "wallet_addEthereumChain",
-                            params: [
-                                {
-                                    chainId: "0x2328", // Hexadecimal version of 9000, prefixed with 0x
-                                    chainName: "Evmos Testnet",
-                                    nativeCurrency: {
-                                        name: "EVMOS",
-                                        symbol: "tEVMOS",
-                                        decimals: 18,
-                                    },
-                                    rpcUrls: ["https://eth.bd.evmos.dev:8545"],
-                                    blockExplorerUrls: ["https://evm.evmos.dev"],
-                                    iconUrls: [""],
-                                },
-                            ],
-                        });;
+        const networkId = await web3.eth.net.getId([callback]);
         const networkData = Musicosmos.networks[networkId];
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
