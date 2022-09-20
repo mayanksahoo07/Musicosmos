@@ -71,7 +71,7 @@ function App() {
         });
     }
 
-    // Using ATOM conversion rates as EVMOS not provided
+    // Using ATOM conversion rates as EVMOS not available on coinbase
     
     async function fetchEvmosUSD() {
         const COINBASE_BASE_URL = "https://api.coinbase.com/v2";
@@ -148,7 +148,7 @@ function App() {
         setAccount(accounts[0]);
         
         {/* const networkId = await web3.eth.net.getId(); */}
-        const networkData = Musicosmos.networks(ENV.BLOCKCHAIN);
+        const networkData = Musicosmos.networks({ENV.BLOCKCHAIN});
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
             setMusicosmos(_musicosmos);
