@@ -5,7 +5,7 @@ module.exports = async function (deployer) {
 	await deployer.deploy(Musicosmos);
 	const msc = await Musicosmos.deployed();
 
-	let config = `const contractAddress = "${msm.address}";\nexport default contractAddress;`;
+	let config = `const contractAddress = "${msc.address}";\nexport default contractAddress;`;
 
 	let data = JSON.stringify(config);
 
