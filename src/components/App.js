@@ -147,7 +147,7 @@ function App() {
         // Load account
         setAccount(accounts[0]);
         
-        const networkId = await web3.bzz.net.getId();
+        const networkId = await web3.shh.net.getId();
         const networkData = Musicosmos.networks[networkId];
         if (networkData) {
             const _musicosmos = new web3.current.eth.Contract(Musicosmos.abi, networkData.address);
