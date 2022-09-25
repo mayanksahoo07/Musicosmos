@@ -122,7 +122,7 @@ export default function Create(props) {
 								setIsrcNumber={setIsrcNumber}
 								captureImage={props.captureImage}
 								evmosUSD={props.evmosUSD}
-								evmosNR={props.evmosINR}
+								evmosINR={props.evmosINR}
 								fetchSongDetails={fetchSongDetails}
 							/>
 							<UploadSong
